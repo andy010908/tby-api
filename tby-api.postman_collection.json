@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "tby-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Get Product by Id",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/product/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "product", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 3,\n  \"productId\": 1,\n  \"orderAmount\": 2\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/order",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "order"]
+            }
+          }
+        },
+        {
+          "name": "Patch Order by order_id",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderAmount\": 3\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/order/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "order", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Order by order_id",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/order/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "order", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Order by User",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/order/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "order", "3"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/user/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "user", "3"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
